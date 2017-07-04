@@ -23,6 +23,49 @@ body {
 	
 }
 
+#container h2 {
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 23px;
+	color: #fff35f;
+	
+}
+
+#poster {
+	width: 100%;
+	padding-top: 20px;
+	display: inline;
+	height: 100%;
+	float: left;
+}
+
+#left_post{
+	width: 300px;
+	float: left;
+}
+
+#left_post h3, p {
+	float: left;
+	clear: left;
+}
+
+#right_post{
+	clear: right;
+	float: right;
+
+}
+
+#right_image{
+	width: 875px;
+	padding-top: 20px;
+	
+}
+
+
+
 #header {
 	border-bottom: 1px solid #233237;
 	margin-bottom: 20px;

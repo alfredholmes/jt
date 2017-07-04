@@ -4,8 +4,21 @@ Home
 {%endblock%}
 
 {%block content%}
-{% for image in images %}
-	<h3>{{image.title}}</h3>
-	<img src="{{image.image.url}}" class='list_image' />
-{% endfor %}
+	{% for show in featured %}
+	<a href="{% url 'show' show.category.link show.id %}">
+		<div id='featured' float: le>
+			<div id='left_post'>
+				<img src="{{ show.poster.url }}" id='poster'/>
+				<h3>{{show.title}}</h3>
+				<p>{{show.description}}</p>
+			</div>
+			{% for image in show.imageelement_set.all %}
+			<div id='right_post'>
+				<img src="{{ image.image.url }}" id='right_image'/>
+			</div>	
+			{%endfor%}
+		</div>
+
+	</a>
+	{% endfor%}
 {% endblock %}

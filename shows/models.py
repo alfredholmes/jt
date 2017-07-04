@@ -9,6 +9,9 @@ class Category(models.Model):
 	def __str__(self):
 		return self.title
 
+	class Meta:
+		verbose_name_plural = "categories"
+
 class Show(models.Model):
 	category = models.ForeignKey(Category, on_delete = models.PROTECT, null=True)
 	title = models.CharField(max_length=200)
@@ -17,6 +20,10 @@ class Show(models.Model):
 	director = models.CharField(max_length=200)
 	company = models.CharField(max_length=200)
 	description = models.TextField()
+	homepage = models.BooleanField()
+
+	
+	poster = models.ImageField(upload_to='show_posters/')
 
 
 	def __str__(self):
@@ -33,3 +40,5 @@ class ImageElement(models.Model):
 
 	def __str__(self):
 		return self.title
+
+
