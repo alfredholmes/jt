@@ -5,6 +5,7 @@ Home
 
 {%block content%}
 	{% for show in featured %}
+	<a href="{% url 'show' show.category.link show.link %}"
 	<div id='featured' float: le>
 		<div id='left_post'>
 			<img src="{{ show.poster.url }}" id='poster'/>
@@ -15,7 +16,7 @@ Home
 			{%with show.imageelement_set.all|first as image%}
 			<img src="{{ image.image.url }}" id='right_image'/>
 			{%endwith%}
-		</div>	
+		</div>
 	</div>
 	{% endfor%}
 	{% for category in menu %}
@@ -30,7 +31,7 @@ Home
 				</a>
 			{% endfor %}
 		</div>
-	
+
 	{%endif%}
 	{% endfor%}
 {% endblock %}

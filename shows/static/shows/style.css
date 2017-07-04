@@ -20,7 +20,7 @@ body {
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 23px;
-	
+
 }
 
 #container h2 {
@@ -31,7 +31,7 @@ body {
 	font-weight: 500;
 	line-height: 18px;
 	color: #fff35f;
-	
+
 }
 
 #poster {
@@ -51,11 +51,11 @@ body {
 #left_post h3, p {
 	float: left;
 
-	
+
 }
 
 #right_post{
-	
+
 	float: right;
 
 }
@@ -63,7 +63,7 @@ body {
 #right_image{
 	width: 875px;
 	padding-top: 20px;
-	
+
 }
 
 #phototable {
@@ -94,7 +94,7 @@ img.table {
 #title {
 	border-bottom: 1px solid #233237;
 
-	
+
 }
 
 #container h3 {
@@ -203,4 +203,10 @@ img.snippet{
 div.snippet{
 	float: left;
 	margin-right: 20px;
+}
+
+#footer{
+	border-top: 1px solid  #233237;
+	text-align: center;
+	clear: both;
 }
