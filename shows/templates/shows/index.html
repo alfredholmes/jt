@@ -5,6 +5,7 @@ Home
 
 {%block content%}
 {% for image in images %}
+	<h3>{{image.title}}</h3>
 	<img src="{{image.image.url}}" class='list_image' />
 {% endfor %}
 {% endblock %}
