@@ -45,15 +45,17 @@ body {
 #left_post{
 	width: 300px;
 	float: left;
+	clear: both;
 }
 
 #left_post h3, p {
 	float: left;
-	clear: left;
+
+	
 }
 
 #right_post{
-	clear: right;
+	
 	float: right;
 
 }
@@ -74,6 +76,7 @@ div.table {
 	margin: 0;
 	padding-right: 3%;
 	vertical-align: top;
+	padding-top: 15px;
 }
 
 img.table {
@@ -111,8 +114,8 @@ p{
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 20px;
-	display: block;
 	color: white;
+	word-break: break-word;
 }
 
 blockquote {
@@ -150,13 +153,14 @@ pre {
 	margin: 0;
 }
 
-#menu a {
+a {
 	color: #78ABBC;
 	text-decoration: none;
+}
+#menu a {
 	font-size: 18px;
 }
-
-#menu a:hover {
+a:hover {
 	color: #92D2E8;
 }
 
@@ -164,4 +168,39 @@ pre {
 {
 	border-top: 1px solid  #233237;
 	margin-top: 20px;
+}
+
+.left {
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+#showdesc{
+	width: 800px;
+}
+
+#rightreview{
+	width: 350px;
+	background: #5e4974;
+	padding-left: 10px;
+}
+
+#categorysnippet{
+	clear: both;
+	padding-top: 50px;
+	float: left;
+}
+
+img.snippet{
+	height: 200px;
+	padding-right: 5%;
+	display: inline-block;
+}
+
+div.snippet{
+	float: left;
+	margin-right: 20px;
 }

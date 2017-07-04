@@ -7,7 +7,7 @@ from .models import ImageElement, Category, Show
 
 def index(request):
 	featured = Show.objects.filter(homepage=True).order_by('start_date')
-	context = {'menu': Category.objects.all(), 'featured' : featured}
+	context = {'menu': Category.objects.all().order_by('order'), 'featured' : featured}
 	return render(request, 'shows/index.html', context)
 
 def overview(request, category_link):
@@ -16,11 +16,14 @@ def overview(request, category_link):
 		shows = category.show_set.all()
 	except Show.DoesNotExist:
 		raise Http404("Category does not exist")
-	return render(request, 'shows/overview.html', {'menu': Category.objects.all(), 'category': category, 'shows': shows})
+	return render(request, 'shows/overview.html', {'menu': Category.objects.all().order_by('order'), 'category': category, 'shows': shows})
 
 def show(request, category_link, show_link):
 	try:
 		show = Show.objects.get(link = show_link)
 	except:
 		raise Http404("Show does not Exist")
-	return render(request, 'shows/showview.html', {'menu': Category.objects.all(), 'show': show})
+
+	reviews = show.review_set.all()
+
+	return render(request, 'shows/showview.html', {'menu': Category.objects.all().order_by('order'), 'show': show, 'reviews': reviews})

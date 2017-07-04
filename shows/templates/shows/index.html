@@ -5,20 +5,32 @@ Home
 
 {%block content%}
 	{% for show in featured %}
-	<a href="{% url 'show' show.category.link show.link %}">
-		<div id='featured' float: le>
-			<div id='left_post'>
-				<img src="{{ show.poster.url }}" id='poster'/>
-				<h3>{{show.title}}</h3>
-				<p>{{show.description}}</p>
-			</div>
-			{% for image in show.imageelement_set.all %}
-			<div id='right_post'>
-				<img src="{{ image.image.url }}" id='right_image'/>
-			</div>	
-			{%endfor%}
+	<div id='featured' float: le>
+		<div id='left_post'>
+			<img src="{{ show.poster.url }}" id='poster'/>
+			<h3>{{show.title}}</h3>
+			<p>{{show.description|truncatewords:30}}</p>
 		</div>
-
-	</a>
+		<div id='right_post'>
+			{%with show.imageelement_set.all|first as image%}
+			<img src="{{ image.image.url }}" id='right_image'/>
+			{%endwith%}
+		</div>	
+	</div>
+	{% endfor%}
+	{% for category in menu %}
+	{% if category.show_set.all%}
+	<div id="categorysnippet">
+			<h2>{{category.title}}</h2>
+			{% for show in category.show_set.all|slice:"3" %}
+				<a href="{%url 'show' category.link show.link %}">
+					<div class="snippet">
+						<img src="{{show.poster.url}}" class="snippet"/>
+					</div>
+				</a>
+			{% endfor %}
+		</div>
+	
+	{%endif%}
 	{% endfor%}
 {% endblock %}
