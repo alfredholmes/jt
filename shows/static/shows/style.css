@@ -25,11 +25,11 @@ body {
 
 #container h2 {
 	font-family: Tahoma, Verdana, Segoe, sans-serif;
-	font-size: 24px;
+	font-size: 18px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
-	line-height: 23px;
+	line-height: 18px;
 	color: #fff35f;
 	
 }
@@ -64,6 +64,23 @@ body {
 	
 }
 
+#phototable {
+	width: 1240px;
+}
+
+div.table {
+	display: inline-block;
+	width: 30%;
+	margin: 0;
+	padding-right: 3%;
+	vertical-align: top;
+}
+
+img.table {
+	display: inline;
+	width: 100%;
+}
+
 
 
 #header {
@@ -87,14 +104,17 @@ body {
 	line-height: 23px;
 }
 
-p {
+p{
 	font-family: Tahoma, Verdana, Segoe, sans-serif;
 	font-size: 14px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 20px;
+	display: block;
+	color: white;
 }
+
 blockquote {
 	font-family: Tahoma, Verdana, Segoe, sans-serif;
 	font-size: 17.5px;
@@ -138,4 +158,10 @@ pre {
 
 #menu a:hover {
 	color: #92D2E8;
+}
+
+#showinfo
+{
+	border-top: 1px solid  #233237;
+	margin-top: 20px;
 }

@@ -5,7 +5,7 @@ Home
 
 {%block content%}
 	{% for show in featured %}
-	<a href="{% url 'show' show.category.link show.id %}">
+	<a href="{% url 'show' show.category.link show.link %}">
 		<div id='featured' float: le>
 			<div id='left_post'>
 				<img src="{{ show.poster.url }}" id='poster'/>

@@ -18,5 +18,9 @@ def overview(request, category_link):
 		raise Http404("Category does not exist")
 	return render(request, 'shows/overview.html', {'menu': Category.objects.all(), 'category': category, 'shows': shows})
 
-def show(request, category, show_id):
-	return
+def show(request, category_link, show_link):
+	try:
+		show = Show.objects.get(link = show_link)
+	except:
+		raise Http404("Show does not Exist")
+	return render(request, 'shows/showview.html', {'menu': Category.objects.all(), 'show': show})
