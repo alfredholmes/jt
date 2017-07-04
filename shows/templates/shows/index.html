@@ -1,0 +1,10 @@
+{% extends 'shows/base.html' %}
+{%block heading%}
+Home
+{%endblock%}
+
+{%block content%}
+{% for image in images %}
+	<img src="{{image.image.url}}" class='list_image' />
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+	<title>
+		{% block heading %} {% endblock %} - Jacqueline Trousdale - Set and Costume Design
+	</title>
+	<link rel='stylesheet' type='text/css' href="{% static 'shows/style.css' %}" />
+</head>
+
+<body>
+<div id="container">
+	<div id="header">
+		<div id="title">
+			<h1>Jacqueline Trousdale</h1>
+			<h3>Set and Costume Design</h3>
+		</div>
+		<div id="menu">
+			<li><a href='#'>Home</a></li>
+			<li><a href='#'>Latest Work</a></li>
+			<li><a href='#'>Recent Projects</a></li>
+			<li><a href='#'>Contact</a></li>
+		</div>
+	</div>
+	<div id="content">
+		{% block content %}
+		{% endblock %}
+	</div>
+</div>
+</body>
+</html>
