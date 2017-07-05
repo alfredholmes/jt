@@ -4,13 +4,13 @@
 {%endblock%}
 
 {%block content%}
-	
+
 	<div id='phototable'>
 
 			<div>
 			{% if show.images|length > 1 %}
 			{% for image in show.images %}
-				<a href="javascript:changephoto('{{image.image.url}}')">
+				<a href="javascript:changephoto('{{image.image.url}}', '{{ image.title }}', '{{image.description }}')">
 					<img src='{{ image.image.url }}' class='smallphoto' alt="{{ image.title }}"/>
 				</a>
 			{% endfor%}
@@ -34,10 +34,18 @@
 		</div>
 
 	</div>
+
+	<div id='photoinfo'>
+		<div class='left'>
+			<h3 id='photo_title'>{{show.main_image.title}}</h3>
+			<p id='photo_description'>{{show.main_image.description}}</p>
+		</div>
+	</div>
+
+
 	{% if reviews%}
 	<div>
 		<div id='review'>
-				<h3>Reviews</h3>
 				{%for review in reviews%}
 					<div id='reviewbox'>
 					<h2>{{review.title}}</h2>

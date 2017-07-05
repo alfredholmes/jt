@@ -129,10 +129,9 @@ a:hover {
 
 #showinfo
 {
-	
+
 	float: right;
 	width: 28%;
-	margin-top: 20px;
 	border-bottom: 1px solid #B1A296;
 }
 
@@ -208,23 +207,23 @@ div#detail_container{
 
 div#show_view {
 	width: 49%;
-	
+
 	padding-right: 0;
 }
 
 img#show_view{
-	
+
 	width: 100%;
 
 }
 
 div#show_view h3{
-	
+
 
 }
 
 div#show_table{
-	width: 24%;	
+	width: 24%;
 }
 
 img.table{
@@ -246,3 +245,7 @@ img#mainphoto{
 	float: left;
 }
 
+#photoinfo{
+	float: right;
+	width: 28%;
+}

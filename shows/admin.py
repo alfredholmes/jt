@@ -10,6 +10,7 @@ class ImageElementInline(admin.StackedInline):
 	model = ImageElement
 	extra = 1
 
+
 	fields = ( 'image_tag', 'image', 'title', 'description')
 	readonly_fields = ('image_tag',)
 

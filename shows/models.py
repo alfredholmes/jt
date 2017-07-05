@@ -26,7 +26,7 @@ class Show(models.Model):
 	company_page = models.CharField(max_length=300)
 	site_live = models.BooleanField(null=False, default=False)
 
-	
+
 	poster = models.ImageField(upload_to='show_posters/')
 
 	@property
@@ -56,12 +56,12 @@ class Review(models.Model):
 
 
 class ImageElement(models.Model):
-	show = models.ForeignKey(Show, on_delete = models.CASCADE, null=True)
-	title = models.CharField(max_length=200, null=True)
-	description = models.TextField(null=True)
+	show = models.ForeignKey(Show, on_delete = models.CASCADE)
+	title = models.CharField(max_length=200, blank=True)
+	description = models.TextField(null=True, blank=True)
 	image = models.ImageField(upload_to='show_images/')
 	order = models.IntegerField()
-	
+
 
 
 	def image_tag(self):
