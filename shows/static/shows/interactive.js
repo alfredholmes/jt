@@ -18,6 +18,6 @@ function changephoto(src, title, description){
 	{
 		photodescription.innerHTML = description
 	}else{
-		phototitle.innerHTML = ' '
+		photodescription.innerHTML = ' '
 	}
 }
