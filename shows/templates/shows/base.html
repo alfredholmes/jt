@@ -6,6 +6,7 @@
 		{% block heading %} {% endblock %} - Jacqueline Trousdale - Set and Costume Design
 	</title>
 	<link rel='stylesheet' type='text/css' href="{% static 'shows/style.css' %}" />
+	<script src="{%static 'shows/interactive.js'%}"></script>
 </head>
 
 <body>
@@ -16,12 +17,10 @@
 			<h3>Set and Costume Design</h3>
 		</div>
 		<div id="menu">
-			<li><a href="{% url 'index' %}">Home</a></li>
-			<li><a href='#'>About</a></li>
+			<li><a href="{% url 'index' %}">Home</a></li>	
 			{% for element in menu %}
 				<li><a href="{% url 'overview' element.link %}">{{element.title}}</a></li>
 			{% endfor %}
-			<li><a href='#'>Contact</a></li>
 		</div>
 	</div>
 	<div id="content">

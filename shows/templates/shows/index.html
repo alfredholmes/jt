@@ -5,30 +5,38 @@ Home
 
 {%block content%}
 	{% for show in featured %}
-	<a href="{% url 'show' show.category.link show.link %}"
-	<div id='featured' float: le>
-		<div id='left_post'>
-			<img src="{{ show.poster.url }}" id='poster'/>
-			<h3>{{show.title}}</h3>
-			<p>{{show.description|truncatewords:30}}</p>
+	{% if show.site_live %}
+	<a href="{% url 'show' show.category.link show.link %}">
+		<div id='featured'>
+			<div class="show_image">
+				{% if show.main_image %}
+					<img src="{{ show.main_image.image.url }}" class="show_image" />
+				{% endif %}
+			</div>
+			<div id='detail_container'>
+				<div id='left_detail'>
+					<h1>{{show.title}}</h1>
+					<h3>{{show.company}}</h3>
+					<h2>{{show.director}}</h2>
+				</div>
+				<div id='right_detail'><h3>{{show.start_date|date:"F Y"}} - {{show.end_date|date:"F Y"}}</h3></div>
+			</div>
 		</div>
-		<div id='right_post'>
-			{%with show.imageelement_set.all|first as image%}
-			<img src="{{ image.image.url }}" id='right_image'/>
-			{%endwith%}
-		</div>
-	</div>
+	</a>
+	{% endif %}
 	{% endfor%}
 	{% for category in menu %}
 	{% if category.show_set.all%}
 	<div id="categorysnippet">
 			<h2>{{category.title}}</h2>
 			{% for show in category.show_set.all|slice:"3" %}
+			{% if show.site_live %}
 				<a href="{%url 'show' category.link show.link %}">
 					<div class="snippet">
 						<img src="{{show.poster.url}}" class="snippet"/>
 					</div>
 				</a>
+			{% endif %}
 			{% endfor %}
 		</div>
 

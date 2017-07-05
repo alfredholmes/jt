@@ -4,31 +4,48 @@
 {%endblock%}
 
 {%block content%}
+	
 	<div id='phototable'>
-	{% for image in show.imageelement_set.all %}
-		<div class='table'><img src='{{ image.image.url }}' class='table'/></div>
-	{% endfor%}
+
+			<div>
+			{% if show.images|length > 1 %}
+			{% for image in show.images %}
+				<a href="javascript:changephoto('{{image.image.url}}')">
+					<img src='{{ image.image.url }}' class='smallphoto' alt="{{ image.title }}"/>
+				</a>
+			{% endfor%}
+			{%endif%}
+			</div>
+
+			<div id='main'>
+				{% if show.main_image%}
+					<img src='{{ show.main_image.image.url }}' id='mainphoto' alt='{{ show.main_image.title }}'/>
+				{% endif %}
+			</div>
 	</div>
 	<div id='showinfo'>
 		<div class='left'>
 		<h2>{{show.title}}</h2>
 		<h3>{{show.company}}</h3>
 		<h3>{{show.director}}</h3>
-		<div class='left'><a href='{{ show.company_page }}'><p>{{show.company}} show page</a></p></div>
+		<div class='left'><a href='{{ show.company_page }}' target="_blank">Visit Site</a></div>
 		<br>
 		<p>{{show.description}}</p>
 		</div>
-		{% if reviews %}
-		<div class='right' id='rightreview'>
-			<h3>Reviews</h3>
-			{%for review in reviews%}
-				<div id='reviewbox'>
-				<h4>{{review.title}}</h4>
-				<h5>{{review.publisher}}</h5>
-				<p>{{review.content|truncatewords:20}} <a href="{{review.link}}">See more</a></p>
-				</div>
-			{%endfor%}
-		</div>
-		{% endif %}
+
 	</div>
+	{% if reviews%}
+	<div>
+		<div id='review'>
+				<h3>Reviews</h3>
+				{%for review in reviews%}
+					<div id='reviewbox'>
+					<h2>{{review.title}}</h2>
+					<h5>{{review.publisher}}</h5>
+					<p>{{review.content|truncatewords:20}} <a href="{{review.link}}" target="_blank">See more</a></p>
+					</div>
+				{%endfor%}
+		</div>
+	</div>
+	{% endif %}
 {% endblock %}

@@ -1,10 +1,10 @@
 body {
 
-	background: #18121E;
+	/*background: #18121E;*/
 }
 
 #container{
-	width: 1200px;
+	width: 90%;
 	margin: 0 auto;
 }
 
@@ -13,7 +13,7 @@ body {
 }
 
 #container h1 {
-	color: #EAC67A;
+	color: #545C61;
 	font-family: Tahoma, Verdana, Segoe, sans-serif;
 	font-size: 34px;
 	font-style: normal;
@@ -30,45 +30,12 @@ body {
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 18px;
-	color: #fff35f;
+	color: #379683;
 
 }
 
-#poster {
-	width: 100%;
-	padding-top: 20px;
-	display: inline;
-	height: 100%;
-	float: left;
-}
-
-#left_post{
-	width: 300px;
-	float: left;
-	clear: both;
-}
-
-#left_post h3, p {
-	float: left;
 
 
-}
-
-#right_post{
-
-	float: right;
-
-}
-
-#right_image{
-	width: 875px;
-	padding-top: 20px;
-
-}
-
-#phototable {
-	width: 1240px;
-}
 
 div.table {
 	display: inline-block;
@@ -79,20 +46,16 @@ div.table {
 	padding-top: 15px;
 }
 
-img.table {
-	display: inline;
-	width: 100%;
-}
 
 
 
 #header {
-	border-bottom: 1px solid #233237;
+	border-bottom: 1px solid #B1A296;
 	margin-bottom: 20px;
 }
 
 #title {
-	border-bottom: 1px solid #233237;
+	border-bottom: 1px solid #B1A296;
 
 
 }
@@ -114,8 +77,8 @@ p{
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 20px;
-	color: white;
-	word-break: break-word;
+	color: #18121E;
+	padding-top: 10px
 }
 
 blockquote {
@@ -154,38 +117,48 @@ pre {
 }
 
 a {
-	color: #78ABBC;
+	color: #7395AE;
 	text-decoration: none;
 }
 #menu a {
 	font-size: 18px;
 }
 a:hover {
-	color: #92D2E8;
+	color: #557A95;
 }
 
 #showinfo
 {
-	border-top: 1px solid  #233237;
+	
+	float: right;
+	width: 28%;
 	margin-top: 20px;
+	border-bottom: 1px solid #B1A296;
 }
 
 .left {
 	float: left;
+	clear:  left;
 }
 
 .right{
 	float: right;
+	clear: right;
 }
 
 #showdesc{
 	width: 800px;
 }
 
-#rightreview{
-	width: 350px;
-	background: #5e4974;
-	padding-left: 10px;
+#review{
+	padding-top: 100px;
+	clear: both;
+}
+
+#reviewbox{
+
+	float: left;
+	width: 33%
 }
 
 #categorysnippet{
@@ -206,7 +179,70 @@ div.snippet{
 }
 
 #footer{
-	border-top: 1px solid  #233237;
+	border-top: 1px solid  #B1A296;
 	text-align: center;
 	clear: both;
 }
+
+div.show_image {
+		width: 100%;
+}
+img.show_image{
+	width: 100%;
+}
+
+div#left_detail {
+	float: left;
+	width: 47%;
+}
+
+div#right_detail {
+	float: right;
+	width: 47%;
+	text-align: right;
+}
+
+div#detail_container{
+	padding-bottom: 200px;
+}
+
+div#show_view {
+	width: 49%;
+	
+	padding-right: 0;
+}
+
+img#show_view{
+	
+	width: 100%;
+
+}
+
+div#show_view h3{
+	
+
+}
+
+div#show_table{
+	width: 24%;	
+}
+
+img.table{
+	width: 100%;
+}
+
+
+
+img.smallphoto{
+	height: 100px;
+}
+
+img#mainphoto{
+	width: 100%;
+}
+
+#phototable {
+	width: 70%;
+	float: left;
+}
+
