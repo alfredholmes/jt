@@ -22,7 +22,7 @@
 {% endfor %}
 {% for text in category.textelement_set.all %}
 <h3>{{text.title}}<h3>
-<p>{{text.content}}</p>
+{{text.content|linebreaks}}
 {% endfor %}
 
 {% endblock %}

@@ -3,10 +3,38 @@ body {
 	/*background: #18121E;*/
 }
 
-#container{
-	width: 90%;
-	margin: 0 auto;
+
+@media screen and (min-width: 500px){
+	#container{
+		width: 100%;
+		margin: 0 auto;
+	}
 }
+
+
+@media screen and (min-width: 700px){
+	#container{
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (min-width: 1201px){
+	#container{
+		width: 1200px;
+		margin: 0 auto;
+	}
+}
+
+
+@media screen and (min-width: 1500px){
+	#container{
+		width: 1500px;
+		margin: 0 auto;
+	}
+}
+
+
 
 .list_image {
 	height: 500px;
@@ -19,7 +47,7 @@ body {
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
-	line-height: 23px;
+	line-height: 35px;
 
 }
 
@@ -29,7 +57,7 @@ body {
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
-	line-height: 18px;
+	line-height: 20px;
 	color: #379683;
 
 }
@@ -119,6 +147,7 @@ pre {
 a {
 	color: #7395AE;
 	text-decoration: none;
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
 }
 #menu a {
 	font-size: 18px;
@@ -157,7 +186,8 @@ a:hover {
 #reviewbox{
 
 	float: left;
-	width: 33%
+	width: 31%;
+	padding: 1%;
 }
 
 #categorysnippet{

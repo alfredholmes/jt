@@ -10,7 +10,7 @@
 			<div>
 			{% if show.images|length > 1 %}
 			{% for image in show.images %}
-				<a href="javascript:changephoto('{{image.image.url}}', '{{ image.title }}', '{{image.description }}')">
+				<a href='javascript:changephoto("{{image.image.url}}", "{{ image.title }}", "{{image.description }}")'>
 					<img src='{{ image.image.url }}' class='smallphoto' alt="{{ image.title }}"/>
 				</a>
 			{% endfor%}
