@@ -20,9 +20,15 @@
 </a>
 {% endif %}
 {% endfor %}
-{% for text in category.textelement_set.all %}
-<h3>{{text.title}}<h3>
-{{text.content|linebreaks}}
+{{text}}
+{% for text in text_elements %}
+	<h3>{{text.title}}</h3>
+	{% for element in text.data %}
+			{% if element.type == 'text' %}
+				{{element.data|linebreaks}}			
+			{% elif element.type == 'img' %}
+				<img src='{{ element.data }}'/>
+			{% endif %}
+	{% endfor %}
 {% endfor %}
-
 {% endblock %}

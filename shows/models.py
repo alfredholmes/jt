@@ -54,13 +54,30 @@ class Review(models.Model):
 	link = models.CharField(max_length=300)
 
 
+class TextElement(models.Model):
+	category = models.ForeignKey(Category, on_delete=models.PROTECT)
+	title = models.CharField(max_length=200)
+	content = models.TextField()
+
+	def __str__(self):
+		return self.category.title + " - " + self.title
+
+def photo_directory_path(instance, filename):
+	if instance.show is not None:
+		return 'show_images/show_{0}/{1}'.format(instance.show.id, filename)
+	if instance.text_element is not None:
+		return 'page_images/page_{0}/{1}'.format(instance.text_element.id, filename)
+	else:
+		return 'images/'
 
 class ImageElement(models.Model):
-	show = models.ForeignKey(Show, on_delete = models.CASCADE)
+	show = models.ForeignKey(Show, on_delete = models.CASCADE, null=True)
+	text_element = models.ForeignKey(TextElement, on_delete=models.CASCADE, null=True)
 	title = models.CharField(max_length=200, blank=True)
 	description = models.TextField(null=True, blank=True)
-	image = models.ImageField(upload_to='show_images/')
-	order = models.IntegerField()
+	image = models.ImageField(upload_to=photo_directory_path)
+	order = models.IntegerField(default=0)
+	tag = models.CharField(max_length=200, null=True)
 
 
 
@@ -71,13 +88,8 @@ class ImageElement(models.Model):
 	image_tag.allow_tags = True
 
 	def __str__(self):
-		return self.show.title + " - " + self.title
+		try:
+			return self.show.title + " - " + self.title
+		except:
+			return ''
 
-
-class TextElement(models.Model):
-	category = models.ForeignKey(Category, on_delete=models.PROTECT)
-	title = models.CharField(max_length=200)
-	content = models.TextField()
-
-	def __str__(self):
-		return self.category.title + " - " + self.title
