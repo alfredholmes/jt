@@ -22,8 +22,8 @@ from django.conf.urls.static import static
 from shows.views import index
 
 urlpatterns = [
-	url(r'^', include('shows.urls')),
     url(r'^admin/', admin.site.urls),
+	url(r'^', include('shows.urls')),
 ]
 
 if settings.DEBUG:

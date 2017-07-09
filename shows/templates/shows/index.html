@@ -29,7 +29,7 @@ Home
 	{% if category.show_set.all%}
 	<div id="categorysnippet">
 			<h2>{{category.title}}</h2>
-			{% for show in category.show_set.all|slice:"3" %}
+			{% for show in category.show_set.all %}
 			{% if show.site_live %}
 				<a href="{%url 'show' category.link show.link %}">
 					<div class="snippet">

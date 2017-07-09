@@ -1,5 +1,7 @@
 from django.db import models
 
+import datetime
+
 # Create your models here.
 
 class Category(models.Model):
@@ -93,3 +95,19 @@ class ImageElement(models.Model):
 		except:
 			return ''
 
+class Blog(models.Model):
+	title = models.CharField(max_length=200)
+	link = models.CharField(max_length=200)
+
+	def __str__(self):
+		return self.title
+
+class Post(models.Model):
+	blog = models.ForeignKey(Blog, on_delete=models.PROTECT)
+	title = models.CharField(max_length=200)
+	link = models.CharField(max_length=200)
+	content = models.TextField()
+	date_published = models.DateField(default=datetime.date.today)
+
+	def __str__(self):
+		return self.title

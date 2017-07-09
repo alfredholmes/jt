@@ -28,6 +28,8 @@
 				{{element.data|linebreaks}}			
 			{% elif element.type == 'img' %}
 				<img src='{{ element.data }}'/>
+			{% elif element.type == 'link' %}
+				{{element.data|safe}}
 			{% endif %}
 	{% endfor %}
 {% endfor %}
