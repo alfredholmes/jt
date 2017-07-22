@@ -1,0 +1,50 @@
+{%extends 'shows/base.html'%}
+{% block heading%}
+Blog
+{% endblock %}
+
+
+{%block content%}
+  {% if posts %}
+    <div class='left post_list'>
+      <h3>Recent Posts</h3>
+      {% for post in posts%}
+        <div class='blog_list_element'>
+          {% if post.image %}
+          <div class='blog_info'>
+              <a href="{%url 'blog_detail' post.link %}"><img src="{{ post.image.image.url }}" class='blog_image'></a>
+          </div>
+          {%endif%}
+          <div class='blog_info'>
+            <h2><a href="{%url 'blog_detail' post.link %}">{{post.title}}</a></h2>
+            <p>{{post.text|truncatewords:50}}</p>
+            <a href="{%url 'blog_detail' post.link %}">Continue reading</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+
+      <div class='blog_nav_box'>
+        {% if categories %}
+        <h3>Categories:</h3>
+        <ul>
+          {% for category in categories %}
+            <li><a href="{% url 'blog_category' category.link%}">{{category.title}}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% if months %}
+          <h3>By Date</h3>
+          <ul>
+          {% for month in months %}
+            <li></li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+
+
+      </div>
+
+  {% endif %}
+{%endblock%}

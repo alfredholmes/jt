@@ -279,3 +279,33 @@ img#mainphoto{
 	float: right;
 	width: 28%;
 }
+
+
+.blog_image {
+	width: 350px;
+
+}
+
+.blog_info {
+	float: left;
+	padding-right: 25px;
+}
+.post_list {
+	width: 60%;
+
+	float: left;
+}
+.blog_list_element{
+	clear: left;
+	float: left;
+	margin-bottom: 25px;
+}
+
+.blog_nav_box{
+	float: right;
+	width: 20%
+}
+
+.show_posts {
+	clear: both;
+}

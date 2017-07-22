@@ -1,0 +1,20 @@
+{%extends 'shows/base.html'%}
+{% block heading%}
+{{post.title}}
+{% endblock %}
+
+
+{%block content%}
+
+<h3>{{post.title}}</h3>
+{% for element in post.data %}
+		{% if element.type == 'text' %}
+			{{element.data|linebreaks}}
+		{% elif element.type == 'img' %}
+			<img src='{{ element.data }}' class='blog_image'/>
+		{% elif element.type == 'link' %}
+			{{element.data|safe}}
+		{% endif %}
+{% endfor %}
+
+{%endblock%}

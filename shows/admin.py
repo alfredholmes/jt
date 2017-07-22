@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ImageElement, Category, Show, Review, TextElement
+from .models import ImageElement, Category, Show, Review, TextElement, Post, PostCategory
 # Register your models here.
 
 admin.site.register(Category)
@@ -32,6 +32,17 @@ class TextAdmin(admin.ModelAdmin):
 	inlines = [ImageElementTextInline]
 
 
+class PostAdmin(admin.ModelAdmin):
+	inlines = [ImageElementTextInline]
+	fields = ( 'title', 'category', 'content', 'show')
+
+class CategoryAdmin(admin.ModelAdmin):
+	fields = ( 'title', )
+
+
+
 
 admin.site.register(Show, ShowAdmin)
 admin.site.register(TextElement, TextAdmin)
+admin.site.register(Post, PostAdmin)
+admin.site.register(PostCategory, CategoryAdmin)
