@@ -19,7 +19,6 @@
 		</div>
 		<div id="menu">
 			<li><a href="{% url 'index' %}">Home</a></li>
-			<li><a href="{% url 'blog' %}">Blog</a></li>
 			{% for element in menu %}
 				<li><a href="{% url 'overview' element.link %}">{{element.title}}</a></li>
 			{% endfor %}

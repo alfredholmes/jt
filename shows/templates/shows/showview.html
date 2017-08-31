@@ -43,26 +43,5 @@
 	</div>
 
 
-	{% if reviews%}
-	<div>
-		<div id='review'>
-				{%for review in reviews%}
-					<div id='reviewbox'>
-					<h2>{{review.title}}</h2>
-					<h5>{{review.publisher}}</h5>
-					<p>{{review.content|truncatewords:20}} <a href="{{review.link}}" target="_blank">See more</a></p>
-					</div>
-				{%endfor%}
-		</div>
-	</div>
-	{% endif %}
 
-	{% if posts%}
-		{%for post in posts %}
-			<h2></h2>
-			<div class='show_posts'>
-				<a href="{%url 'blog_detail' post.link %}"><h3>{{post.title}}</h3></a>
-			</div>
-		{%endfor%}
-	{%endif%}
 {% endblock %}
